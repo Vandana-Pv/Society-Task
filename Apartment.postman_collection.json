@@ -1,0 +1,1101 @@
+{
+	"info": {
+		"_postman_id": "60c17fda-b53f-47b1-a24c-32a11c96fb3e",
+		"name": "Apartment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Vandana\",\r\n    \"mobile\": \"6301352114\",\r\n    \"age\": 22,\r\n    \"gender\": \"F\",\r\n    \"blockNumber\": 2,\r\n    \"doorNumber\":15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"register"
+					]
+				},
+				"description": "### Status 200 - OK\r\n\r\nUser Registered Successfully \r\n\r\n### Status 400 - Bad Request\r\n\r\n- Mobile Number required \r\n- User entered registered mobile number \r\n- Mobile number must be a 10 digit number"
+			},
+			"response": [
+				{
+					"name": "User - Status 400 - Mobile number required",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Vandana\",\r\n    \"age\": 22,\r\n    \"gender\": \"F\",\r\n    \"blockNumber\": 2,\r\n    \"doorNumber\":15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14-9RxetYXJborh5kDXO0ZSUm4bZ9c\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 07:00:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "\"mobile\" is required"
+				},
+				{
+					"name": "User - Status 400 (User entered registered mobile number)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Vandana\",\r\n    \"mobile\": \"9949234621\",\r\n    \"age\": 22,\r\n    \"gender\": \"F\",\r\n    \"blockNumber\": 2,\r\n    \"doorNumber\":15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"33-O6p4OYUuWw339fb+pHDI2tcptKc\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 06:46:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Mobile number registered. Enter a new mobile number"
+				},
+				{
+					"name": "User - Status 400 - Mobile must be 10 digits (user given < 10)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Vandana\",\r\n    \"mobile\": \"99498\",\r\n    \"age\": 22,\r\n    \"gender\": \"F\",\r\n    \"blockNumber\": 2,\r\n    \"doorNumber\":15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-jtfpllrUdbbccCei8+Ym0q7wDBE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 06:59:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "\"mobile\" must be less than or equal to 10"
+				},
+				{
+					"name": "User1 - Status 200 (Successful Login)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Vandana\",\r\n    \"mobile\": \"9949234621\",\r\n    \"age\": 22,\r\n    \"gender\": \"F\",\r\n    \"blockNumber\": 2,\r\n    \"doorNumber\":15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-upxk4EhNE7w3fE8M/fMe1lCCKA8\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 06:41:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Great! for being here Vandana"
+				},
+				{
+					"name": "User - Status 400 - Mobile no must be a 10 digit number (user given > 10)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Vandana\",\r\n    \"mobile\": \"99492346211548\",\r\n    \"age\": 22,\r\n    \"gender\": \"F\",\r\n    \"blockNumber\": 2,\r\n    \"doorNumber\":15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-jtfpllrUdbbccCei8+Ym0q7wDBE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 06:58:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "\"mobile\" must be less than or equal to 10"
+				}
+			]
+		},
+		{
+			"name": "GetAllDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"details"
+					]
+				},
+				"description": "### Status 200 - OK\r\n\r\nUser details displayed successfully\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Login Step1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"number\": 6301352114\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/auth/login/step1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"login",
+						"step1"
+					]
+				},
+				"description": "### Status 200 - OK\r\n\r\nOTP sent to the registered mobile number \r\n\r\n### Status 400 - Bad Request\r\n\r\n- User not registered (Mobile number not registered)"
+			},
+			"response": [
+				{
+					"name": "Status 200 - OTP sent to the mobile",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"number\": 6301352114\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/auth/login/step1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"login",
+								"step1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "9"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9-HUBOVxlEbAzoJpeNwNsbqFklR28\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 08:04:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Enter OTP"
+				},
+				{
+					"name": "User Login - Status 400 - User not registered",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"number\": 6301352114\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/auth/login/step1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"login",
+								"step1"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-aXWuvW5GF4VyYW/3M8hsiVtaluE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 08:02:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Mobile number not registered"
+				}
+			]
+		},
+		{
+			"name": "Login Step2 - Entering OTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"otp\": \"45487\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/auth/login/step2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"login",
+						"step2"
+					]
+				},
+				"description": "### Status 200 - OK\r\n\r\nSuccessful Login \r\n\r\n### Status 400 - Bad Request\r\n\r\n- Entered OTP is wrong -> validation failed"
+			},
+			"response": [
+				{
+					"name": "Sucessful Login - Status 200 ",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\": \"C79v\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/auth/login/step2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"login",
+								"step2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10-oehRMv33M6J7bowvQkku0asnTOQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 08:11:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Successful Login"
+				},
+				{
+					"name": "Login Failed - Status 400 - Entered OTP is wrong ",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\": \"45487\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/auth/login/step2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"login",
+								"step2"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "12"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c-ynW68jzUQj8/z+b+qrMUvXL1f00\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 08:15:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Failed Login"
+				}
+			]
+		},
+		{
+			"name": "LogOut",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"logout"
+					]
+				},
+				"description": "### Status 200 - OK\r\n\r\nUser loggedout Successfully \r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Family members details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"vandu\",\r\n    \"age\": 25,\r\n    \"gender\": \"f\",\r\n    \"relation\": \"sis\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/auth/5f119b41901ad551749703c1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"5f119b41901ad551749703c1"
+					]
+				},
+				"description": "### Status 200 - OK\r\n\r\nUser added Successfully \r\n\r\n### Status 400 - Bad Request\r\n\r\n- User not found"
+			},
+			"response": [
+				{
+					"name": "Status 400 - User not Found ",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"meghu\",\r\n    \"age\": 25,\r\n    \"gender\": \"f\",\r\n    \"relation\": \"sis\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/auth/5f119b41901ad551749703g5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"5f119b41901ad551749703g5"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e-AeuUaVSDFyr5HsjCcV+fKNkZtqs\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 13:10:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "User not found"
+				},
+				{
+					"name": "Status 200 - User added successfully",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"vandu\",\r\n    \"age\": 25,\r\n    \"gender\": \"f\",\r\n    \"relation\": \"sis\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/auth/5f119b41901ad551749703c1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"5f119b41901ad551749703c1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"17-3deIU1pXSLj4lhEU7VncTe0mdEo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 13:11:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "User added successfully"
+				}
+			]
+		},
+		{
+			"name": "Edit/Update Family Details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"vandu\",\r\n    \"age\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/auth/5f119b41901ad551749703c1/5f11a11947383242cc3216ef",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"5f119b41901ad551749703c1",
+						"5f11a11947383242cc3216ef"
+					]
+				},
+				"description": "### Status 200 - OK\r\n\r\nUser added Successfully \r\n\r\n### Status 400 - Bad Request\r\n\r\n- User not found"
+			},
+			"response": [
+				{
+					"name": "Status 200 - Updated Successfully",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"vandu\",\r\n    \"age\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/auth/5f119b41901ad551749703c1/5f11a11947383242cc3216ef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"5f119b41901ad551749703c1",
+								"5f11a11947383242cc3216ef"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14-bVGMt3+P7m+5HSNvSzxb4jso0gQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 13:09:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Updated successfully"
+				},
+				{
+					"name": "Status 400 - User not Found ",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"vandu\",\r\n    \"age\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/auth/5f119b41901ad551749703c1/5f11a11947383242cc32110ef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"5f119b41901ad551749703c1",
+								"5f11a11947383242cc32110ef"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e-AeuUaVSDFyr5HsjCcV+fKNkZtqs\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 13:05:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "User not found"
+				}
+			]
+		},
+		{
+			"name": "Delete Family Details",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/auth/5f119b41901ad551749703c1/5f11a11947383242cc3216ef",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"5f119b41901ad551749703c1",
+						"5f11a11947383242cc3216ef"
+					]
+				},
+				"description": "### Status 200 - OK\r\n\r\nUser added Successfully \r\n\r\n### Status 400 - Bad Request\r\n\r\n- User not found"
+			},
+			"response": [
+				{
+					"name": "User Status 200 - User deleted successfully",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/auth/5f119b41901ad551749703c1/5f11a11947383242cc3216ef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"5f119b41901ad551749703c1",
+								"5f11a11947383242cc3216ef"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "25"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"19-xz+ZFSsDrNReHT4IAhzZwgKel0M\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 13:14:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "User deleted successfully"
+				},
+				{
+					"name": "Status 400 - User not Found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/auth/5f119b41901ad551749703c1/5f11a11947383242cc3216",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"5f119b41901ad551749703c1",
+								"5f11a11947383242cc3216"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e-AeuUaVSDFyr5HsjCcV+fKNkZtqs\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 13:16:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "User not found"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}
